@@ -7,41 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--<div class="modal-overlay">
+    <div class="modal-overlay hide" id="modal">
         <div class="modal-box">
             <div class="modal-close-position">
-                <img src="images/close-icon.png" class="close-button-style">
+                <img src="images/close-icon.png" class="close-button-style" id="closeModalBtn">
             </div>
             <div class="modal-title">Add Flashcard</div>
             <div class="modal-inputs">
                 <span class="modal-input-information">Question:</span><br>
-                <textarea placeholder="Type the question here..." class="modal-input-style"></textarea><br>
+                <textarea placeholder="Type the question here..." class="modal-input-style" id="inputQuestion"></textarea><br>
                 <span class="modal-input-information">Answer:</span><br>
-                <textarea placeholder="Type the answer here..." class="modal-input-style"></textarea>
+                <textarea placeholder="Type the answer here..." class="modal-input-style" id="inputAnswer"></textarea>
             </div>
-            <div class="modal-save">Save</div>
+            <div class="modal-save" id="saveFlashcard">Save</div>
         </div>
-    </div>-->
+    </div>
     <header>
-        <div class="add-flashcard">
+        <div class="add-flashcard" id="addFlashcardBtn">
             Add Flashcard
         </div>
     </header>
     <section id="main">
-        <div class="flashcards-all">
-            <div class="flashcard">
-                <span class="flashcard-question">Ile mialem lat</span>
-                <div class="flashcard-button">Show/Hide</div>
-                <div class="flashcard-mini-buttons">
-                    <div class="flashcard-mini-button">
-                        <img src="images/edit-icon.png" class="icons-style">
-                    </div>
-                    <div class="flashcard-mini-button">
-                        <img src="images/bin-icon.png" class="icons-style">
-                    </div>
-                </div>
-            </div>
+        <div class="flashcards-all" id="flashcardContainer">
         </div>
     </section>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -54,10 +54,17 @@ header{
     font-weight: 600;
 }
 
+.flashcard-answer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
 .flashcard-button{
     background-color: rgb(132, 0, 255);
     text-align: center;
     margin-top: 1em;
+    margin-bottom: 1em;
     padding: 0.5em 0 0.5em 0;
     cursor: pointer;
     border-radius: 0.5em;
@@ -149,5 +156,9 @@ header{
 
 .modal-save:hover{
     background-color: rgb(104, 0, 201);
+}
+
+.hide{
+    display: none;
 }
 
