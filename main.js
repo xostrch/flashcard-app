@@ -1,18 +1,18 @@
 const addFlashcardBtn = document.getElementById("addFlashcardBtn");
-const closeModalBtn = document.getElementById("closeModalBtn")
-const modal = document.getElementById("modal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const modalAddFlashcard = document.getElementById("modalAddFlashcard");
 
 addFlashcardBtn.addEventListener("click",()=>{
-    modal.classList.remove("hide");
+    modalAddFlashcard.classList.remove("hide");
 })
 
 closeModalBtn.addEventListener("click",()=>{
-    modal.classList.add("hide");
+    modalAddFlashcard.classList.add("hide");
 })
 
 
 const saveFlashcard = document.getElementById("saveFlashcard");
-const flashcardContainer = document.getElementById("flashcardContainer")
+const flashcardContainer = document.getElementById("flashcardContainer");
 
 saveFlashcard.addEventListener("click",()=>{
     let inputQuestion = document.getElementById("inputQuestion");
@@ -44,7 +44,7 @@ saveFlashcard.addEventListener("click",()=>{
     editBtnBox.appendChild(editBtn);
 
     const deleteBtnBox = document.createElement("div");
-    deleteBtnBox.classList.add("flashcard-mini-button")
+    deleteBtnBox.classList.add("flashcard-mini-button");
     const deleteBtn = document.createElement("img");
     deleteBtn.src = "images/bin-icon.png";
     deleteBtn.classList.add("icons-style");
@@ -60,11 +60,47 @@ saveFlashcard.addEventListener("click",()=>{
 
     flashcardContainer.appendChild(boxFlashcard);
     
+    let editQuestion = document.getElementById("editQuestion");
+    let editAnswer = document.getElementById("editAnswer");
+    editQuestion.value = inputQuestion.value;
+    editAnswer.value = inputAnswer.value;
+
+    modalAddFlashcard.classList.add("hide");
+
+    showHideBtn.addEventListener("click",() => {
+        answerFlashcard.classList.toggle("hide");
+    });
+
+    deleteBtnBox.addEventListener("click",() => {
+        boxFlashcard.remove();
+    });
+
+    const modalEditFlashcard = document.getElementById("modalEditFlashcard");
+    const modalEditFlashcardClose = document.getElementById("modalEditFlashcardClose");
+
+    modalEditFlashcardClose.addEventListener("click",() => {
+        modalEditFlashcard.classList.add("hide");
+    })
+
+let currentFlashcard = null;
+
+    editBtnBox.addEventListener("click", () =>{
+        currentFlashcard = { question: questionFlashcard, answer: answerFlashcard };
+        editQuestion.value = questionFlashcard.textContent;
+        editAnswer.value = answerFlashcard.textContent;
+        modalEditFlashcard.classList.remove("hide");
+    })
+
+    const saveEditFlashcard = document.getElementById("saveEditFlashcard");
+
+    saveEditFlashcard.addEventListener("click", () => {
+        if(currentFlashcard){
+            currentFlashcard.question.textContent = editQuestion.value;
+            currentFlashcard.answer.textContent = editAnswer.value;
+        }
+        modalEditFlashcard.classList.add("hide");
+    })
+    
     inputQuestion.value = "";
     inputAnswer.value = "";
-    modal.classList.add("hide");
-
-    showHideBtn.addEventListener("click",()=>{
-        answerFlashcard.classList.toggle("hide");
-    })
 })

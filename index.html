@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="modal-overlay hide" id="modal">
+    <div class="modal-overlay hide" id="modalAddFlashcard">
         <div class="modal-box">
             <div class="modal-close-position">
                 <img src="images/close-icon.png" class="close-button-style" id="closeModalBtn">
@@ -22,6 +22,23 @@
             <div class="modal-save" id="saveFlashcard">Save</div>
         </div>
     </div>
+
+    <div class="modal-overlay hide" id="modalEditFlashcard">
+        <div class="modal-box">
+            <div class="modal-close-position">
+                <img src="images/close-icon.png" class="close-button-style" id="modalEditFlashcardClose">
+            </div>
+            <div class="modal-title">Edit Flashcard</div>
+            <div class="modal-inputs">
+                <span class="modal-input-information">Question:</span><br>
+                <textarea placeholder="Type the question here..." class="modal-input-style" id="editQuestion"></textarea><br>
+                <span class="modal-input-information">Answer:</span><br>
+                <textarea placeholder="Type the answer here..." class="modal-input-style" id="editAnswer"></textarea>
+            </div>
+            <div class="modal-save" id="saveEditFlashcard">Save</div>
+        </div>
+    </div>
+
     <header>
         <div class="add-flashcard" id="addFlashcardBtn">
             Add Flashcard
